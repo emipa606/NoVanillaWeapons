@@ -10,9 +10,14 @@ namespace NoVanillaWeapons
     {
         static NoVanillaWeapons()
         {
+            var melee = LoadedModManager.GetMod<NoVanillaWeaponsMod>().GetSettings<NoVanillaWeaponsSettings>().Melee;
+            var ranged = LoadedModManager.GetMod<NoVanillaWeaponsMod>().GetSettings<NoVanillaWeaponsSettings>().Ranged;
             var vanillaWeapons = (from ThingDef weapon in DefDatabase<ThingDef>.AllDefsListForReading
-                where weapon?.IsWeapon == true &&
-                      weapon.modContentPack?.PackageId?.Contains(ModContentPack.CoreModPackageId) == true
+                where weapon != null &&
+                      weapon.IsWeapon &&
+                      weapon.modContentPack?.PackageId?.Contains(ModContentPack.CoreModPackageId) == true &&
+                      (melee || weapon.IsMeleeWeapon != true) &&
+                      (ranged || weapon.IsRangedWeapon != true)
                 select weapon).ToList();
 
             foreach (var thingDef in vanillaWeapons)
@@ -44,6 +49,8 @@ namespace NoVanillaWeapons
             {
                 weaponRecipe.factionPrerequisiteTags = new List<string> {"NotForYou"};
             }
+
+            Log.Message($"[NoVanillaWeapons]: Removed {vanillaWeapons.Count} vanilla weapons");
         }
     }
 }

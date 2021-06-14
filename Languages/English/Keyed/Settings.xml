@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <NVW.Restart>Any change here REQUIRES a restart to have effect</NVW.Restart>
+  <NVW.Melee>Remove Melee</NVW.Melee>
+  <NVW.Melee.Tip>All Melee-weapons will be removed</NVW.Melee.Tip>
+  <NVW.Ranged>Remove Ranged</NVW.Ranged>
+  <NVW.Ranged.Tip>All Ranged-weapons will be removed</NVW.Ranged.Tip>
+  <NVW.Why>Okay, all weapons allowed. Ill just do nothing.</NVW.Why>
+</LanguageData>

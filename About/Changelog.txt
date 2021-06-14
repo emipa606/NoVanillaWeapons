@@ -1,4 +1,7 @@
 # Changelog for NoVanillaWeapons
 
+1.0.1.0 - Added setting to remove melee or ranged only
+
+
 1.0.0.0 - First publish
 

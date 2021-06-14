@@ -7,7 +7,7 @@ If you have any suggestion on more properties to sort on, leave a comment here o
 
 Tries to remove all vanilla weapons from the game.
 
-To not cause to much hard errors it iterates through all weapons and sets properties to values that make them not spawn in the game and their recipes not usable for any faction. It deos not remove weapons from saves or scenario-starts but no new weapons should spawn.  
+To not cause to much hard errors it iterates through all weapons and sets properties to values that make them not spawn in the game and their recipes not usable for any faction. It does not remove weapons from saves or scenario-starts but no new weapons should spawn.  
 
 For players that want to only use and find modded weapons.
 
