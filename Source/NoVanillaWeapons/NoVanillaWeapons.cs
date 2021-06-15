@@ -17,7 +17,10 @@ namespace NoVanillaWeapons
                       weapon.IsWeapon &&
                       weapon.modContentPack?.PackageId?.Contains(ModContentPack.CoreModPackageId) == true &&
                       (melee || weapon.IsMeleeWeapon != true) &&
-                      (ranged || weapon.IsRangedWeapon != true)
+                      (ranged || weapon.IsRangedWeapon != true) &&
+                      !weapon.IsStuff &&
+                      weapon.weaponTags?.Contains("TurretGun") == false &&
+                      !weapon.destroyOnDrop
                 select weapon).ToList();
 
             foreach (var thingDef in vanillaWeapons)
@@ -39,6 +42,8 @@ namespace NoVanillaWeapons
                     vanillaWeapons[i]);
             }
 
+            DefDatabase<ThingDef>.ResolveAllReferences();
+
             var weaponRecipes = from recipe in DefDatabase<RecipeDef>.AllDefsListForReading
                 where vanillaWeapons.Contains(recipe.ProducedThingDef) || (from product in recipe.products
                     where vanillaWeapons.Contains(product.thingDef)
@@ -50,7 +55,12 @@ namespace NoVanillaWeapons
                 weaponRecipe.factionPrerequisiteTags = new List<string> {"NotForYou"};
             }
 
-            Log.Message($"[NoVanillaWeapons]: Removed {vanillaWeapons.Count} vanilla weapons");
+            DefDatabase<RecipeDef>.ResolveAllReferences();
+
+            var vanillaNames = new List<string>();
+            vanillaWeapons.ForEach(def => vanillaNames.Add(def.label));
+            Log.Message(
+                $"[NoVanillaWeapons]: Removed {vanillaWeapons.Count} vanilla weapons: {string.Join(",", vanillaNames)}");
         }
     }
 }

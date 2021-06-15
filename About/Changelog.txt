@@ -1,5 +1,8 @@
 # Changelog for NoVanillaWeapons
 
+1.0.2.0 - Should now ignore wood and non-obtainable weapons (mechs for example)
+
+
 1.0.1.0 - Added setting to remove melee or ranged only
 
 
