@@ -15,7 +15,7 @@ namespace NoVanillaWeapons
             var vanillaWeapons = (from ThingDef weapon in DefDatabase<ThingDef>.AllDefsListForReading
                 where weapon != null &&
                       weapon.IsWeapon &&
-                      weapon.modContentPack?.PackageId?.Contains(ModContentPack.CoreModPackageId) == true &&
+                      weapon.modContentPack?.IsOfficialMod == true &&
                       (melee || weapon.IsMeleeWeapon != true) &&
                       (ranged || weapon.IsRangedWeapon != true) &&
                       !weapon.IsStuff &&
