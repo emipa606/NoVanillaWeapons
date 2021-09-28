@@ -2,7 +2,7 @@
 <ModSyncNinjaData>
   <ID>f0dddb54-7fe2-48cb-915b-51993cf7b30f</ID>
   <ModName>No vanilla weapons</ModName>
-  <Version>1.0.3.0</Version>
+  <Version>1.0.4.0</Version>
   <SaveBreaking>False</SaveBreaking>
   <Host name="Github">
     <Owner>emipa606</Owner>

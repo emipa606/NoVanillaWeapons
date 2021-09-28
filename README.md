@@ -1,6 +1,6 @@
 # NoVanillaWeapons
 
-![Image](https://i.imgur.com/WAEzk68.png)
+![Image](https://i.imgur.com/buuPQel.png)
 
 
 If you have any suggestion on more properties to sort on, leave a comment here or on the Discord-server!
@@ -13,16 +13,14 @@ For players that want to only use and find modded weapons.
 
 Base-classes are untouched so they still can be used by mods.
 
-[table]
-	[tr]
-		[td]https://invite.gg/Mlie]![Image](https://i.imgur.com/zdzzBrc.png)
-[/td]
-		[td]https://github.com/emipa606/NoVanillaWeapons]![Image](https://i.imgur.com/kTkpTOE.png)
-[/td]
-	[/tr]
-[/table]
+![Image](https://i.imgur.com/O0IIlYj.png)
 
-![Image](https://i.imgur.com/Rs6T6cr.png)
+Since modding is just a hobby for me I expect no donations to keep modding. If you still want to show your support you can gift me anything from my https://store.steampowered.com/wishlist/id/Mlie]Wishlist or buy me a cup of tea.
+
+https://ko-fi.com/G2G55DDYD]![Image](https://i.ibb.co/VWJJb3w/Support-Me-dark-2x.png)
+
+
+![Image](https://i.imgur.com/PwoNOj4.png)
 
 
 
