@@ -6,4 +6,5 @@
   <NVW.Ranged>Remove Ranged</NVW.Ranged>
   <NVW.Ranged.Tip>All Ranged-weapons will be removed</NVW.Ranged.Tip>
   <NVW.Why>Okay, all weapons allowed. Ill just do nothing.</NVW.Why>
+  <NVW.ModVersion>Installed mod-version: {0}</NVW.ModVersion>
 </LanguageData>
