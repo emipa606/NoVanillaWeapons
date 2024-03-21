@@ -27,14 +27,13 @@ internal class NoVanillaWeaponsMod : Mod
     {
         instance = this;
         currentVersion =
-            VersionFromManifest.GetVersionFromModMetaData(
-                ModLister.GetActiveModWithIdentifier("Mlie.NoVanillaWeapons"));
+            VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
 
     /// <summary>
     ///     The instance-settings for the mod
     /// </summary>
-    private NoVanillaWeaponsSettings Settings
+    public NoVanillaWeaponsSettings Settings
     {
         get
         {

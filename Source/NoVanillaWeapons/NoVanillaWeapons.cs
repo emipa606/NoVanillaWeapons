@@ -10,10 +10,10 @@ internal static class NoVanillaWeapons
 {
     static NoVanillaWeapons()
     {
-        var melee = LoadedModManager.GetMod<NoVanillaWeaponsMod>().GetSettings<NoVanillaWeaponsSettings>().Melee;
-        var ranged = LoadedModManager.GetMod<NoVanillaWeaponsMod>().GetSettings<NoVanillaWeaponsSettings>().Ranged;
+        var melee = NoVanillaWeaponsMod.instance.Settings.Melee;
+        var ranged = NoVanillaWeaponsMod.instance.Settings.Ranged;
         var vanillaWeapons = (from ThingDef weapon in DefDatabase<ThingDef>.AllDefsListForReading
-            where weapon is { IsWeapon: true, modContentPack: { IsOfficialMod: true } } &&
+            where weapon is { IsWeapon: true, modContentPack.IsOfficialMod: true } &&
                   (melee || weapon.IsMeleeWeapon != true) && (ranged || weapon.IsRangedWeapon != true) &&
                   !weapon.IsStuff && weapon.weaponTags?.Contains("TurretGun") == false && !weapon.destroyOnDrop
             select weapon).ToList();
@@ -61,7 +61,7 @@ internal static class NoVanillaWeapons
 
         foreach (var weaponRecipe in weaponRecipes)
         {
-            weaponRecipe.factionPrerequisiteTags = new List<string> { "NotForYou" };
+            weaponRecipe.factionPrerequisiteTags = ["NotForYou"];
         }
 
         DefDatabase<RecipeDef>.ResolveAllReferences();
