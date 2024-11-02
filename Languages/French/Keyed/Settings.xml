@@ -8,4 +8,6 @@
   <NVW.Ranged.Tip>Toutes les armes à distance seront supprimées</NVW.Ranged.Tip>
   <NVW.Why>Ok, toutes les armes sont autorisées. Je ne fais rien.</NVW.Why>
   <NVW.ModVersion>Version installée du module : {0}</NVW.ModVersion>
+  <NVW.Grenades>Supprimer les grenades</NVW.Grenades>
+  <NVW.Grenades.Tip>Toutes les grenades seront supprimées</NVW.Grenades.Tip>
 </LanguageData>

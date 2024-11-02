@@ -10,13 +10,14 @@ internal static class NoVanillaWeapons
 {
     static NoVanillaWeapons()
     {
-        var melee = NoVanillaWeaponsMod.instance.Settings.Melee;
-        var ranged = NoVanillaWeaponsMod.instance.Settings.Ranged;
-        var vanillaWeapons = (from ThingDef weapon in DefDatabase<ThingDef>.AllDefsListForReading
-            where weapon is { IsWeapon: true, modContentPack.IsOfficialMod: true } &&
-                  (melee || weapon.IsMeleeWeapon != true) && (ranged || weapon.IsRangedWeapon != true) &&
-                  !weapon.IsStuff && weapon.weaponTags?.Contains("TurretGun") == false && !weapon.destroyOnDrop
-            select weapon).ToList();
+        var vanillaWeapons = DefDatabase<ThingDef>.AllDefsListForReading
+            .Where(weapon => weapon is { IsWeapon: true, modContentPack.IsOfficialMod: true } &&
+                             (NoVanillaWeaponsMod.instance.Settings.Melee || weapon.IsMeleeWeapon != true) &&
+                             (NoVanillaWeaponsMod.instance.Settings.Ranged || weapon.IsRangedWeapon != true) &&
+                             (NoVanillaWeaponsMod.instance.Settings.Grenades ||
+                              weapon.weaponTags?.Any(tag => tag.ToLower().Contains("grenade")) != true) &&
+                             !weapon.IsStuff && weapon.weaponTags?.Contains("TurretGun") == false &&
+                             !weapon.destroyOnDrop).ToList();
 
         foreach (var thingDef in vanillaWeapons)
         {

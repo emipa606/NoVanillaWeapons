@@ -70,8 +70,10 @@ internal class NoVanillaWeaponsMod : Mod
         listing_Standard.CheckboxLabeled("NVW.Melee".Translate(), ref Settings.Melee, "NVW.Melee.Tip".Translate());
         listing_Standard.CheckboxLabeled("NVW.Ranged".Translate(), ref Settings.Ranged,
             "NVW.Ranged.Tip".Translate());
+        listing_Standard.CheckboxLabeled("NVW.Grenades".Translate(), ref Settings.Grenades,
+            "NVW.Grenades.Tip".Translate());
         listing_Standard.Gap();
-        if (!Settings.Ranged && !Settings.Melee)
+        if (!Settings.Ranged && !Settings.Melee && !Settings.Grenades)
         {
             listing_Standard.Label("NVW.Why".Translate());
         }
@@ -85,6 +87,5 @@ internal class NoVanillaWeaponsMod : Mod
         }
 
         listing_Standard.End();
-        Settings.Write();
     }
 }

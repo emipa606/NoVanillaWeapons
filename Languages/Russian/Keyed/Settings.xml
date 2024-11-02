@@ -8,4 +8,6 @@
   <NVW.Ranged.Tip>Все оружие дальнего боя будет удалено</NVW.Ranged.Tip>
   <NVW.Why>Ладно, все оружие разрешено. Я просто ничего не делаю.</NVW.Why>
   <NVW.ModVersion>Установленная версия мода: {0}</NVW.ModVersion>
+  <NVW.Grenades>Удалить гранаты</NVW.Grenades>
+  <NVW.Grenades.Tip>Все гранаты будут удалены</NVW.Grenades.Tip>
 </LanguageData>

@@ -7,6 +7,7 @@ namespace NoVanillaWeapons;
 /// </summary>
 internal class NoVanillaWeaponsSettings : ModSettings
 {
+    public bool Grenades = true;
     public bool Melee = true;
     public bool Ranged = true;
 
@@ -18,5 +19,6 @@ internal class NoVanillaWeaponsSettings : ModSettings
         base.ExposeData();
         Scribe_Values.Look(ref Melee, "Melee", true);
         Scribe_Values.Look(ref Ranged, "Ranged", true);
+        Scribe_Values.Look(ref Grenades, "Grenades", true);
     }
 }

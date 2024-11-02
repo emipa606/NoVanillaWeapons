@@ -8,4 +8,6 @@
   <NVW.Ranged.Tip>Alle Fernkampfwaffen werden entfernt</NVW.Ranged.Tip>
   <NVW.Why>Okay, alle Waffen sind erlaubt. Ich mache einfach nichts.</NVW.Why>
   <NVW.ModVersion>Installierte Mod-Version: {0}</NVW.ModVersion>
+  <NVW.Grenades>Granaten entfernen</NVW.Grenades>
+  <NVW.Grenades.Tip>Alle Granaten werden entfernt</NVW.Grenades.Tip>
 </LanguageData>
