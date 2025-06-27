@@ -10,6 +10,7 @@
     <li>1.3</li>
     <li>1.4</li>
     <li>1.5</li>
+    <li>1.6</li>
   </supportedVersions>
   <modDependencies />
   <loadAfter />
@@ -17,7 +18,7 @@
 
 If you have any suggestion on more properties to sort on, leave a comment here or on the Discord-server!
 
-Tries to remove all vanilla weapons from the game. There are mod options for only removing ranged/melee if needed.
+Tries to remove all vanilla weapons from the game. There are mod options for only removing ranged/melee/grenades if needed.
 
 To not cause to much hard errors it iterates through all weapons and sets properties to values that make them not spawn in the game and their recipes not usable for any faction. It does not remove weapons from saves or scenario-starts but no new weapons should spawn.  
 
@@ -53,5 +54,5 @@ Since modding is just a hobby for me I expect no donations to keep modding. If y
 [/list] 
 
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/2514935266][img]https://img.shields.io/github/v/release/emipa606/NoVanillaWeapons?label=latest%20version&amp;style=plastic&amp;labelColor=0070cd&amp;color=white[/img][/url] | tags:  remove weapons</description>
-  <modVersion IgnoreIfNoMatchingField="True">1.5.1</modVersion>
+  <modVersion IgnoreIfNoMatchingField="True">1.6.0</modVersion>
 </ModMetaData>

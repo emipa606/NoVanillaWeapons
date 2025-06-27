@@ -4,7 +4,7 @@
 
 If you have any suggestion on more properties to sort on, leave a comment here or on the Discord-server!
 
-Tries to remove all vanilla weapons from the game. There are mod options for only removing ranged/melee if needed.
+Tries to remove all vanilla weapons from the game. There are mod options for only removing ranged/melee/grenades if needed.
 
 To not cause to much hard errors it iterates through all weapons and sets properties to values that make them not spawn in the game and their recipes not usable for any faction. It does not remove weapons from saves or scenario-starts but no new weapons should spawn.  
 

@@ -10,7 +10,7 @@ internal class NoVanillaWeaponsMod : Mod
     /// <summary>
     ///     The instance of the settings to be read by the mod
     /// </summary>
-    public static NoVanillaWeaponsMod instance;
+    public static NoVanillaWeaponsMod Instance;
 
     private static string currentVersion;
 
@@ -25,7 +25,7 @@ internal class NoVanillaWeaponsMod : Mod
     /// <param name="content"></param>
     public NoVanillaWeaponsMod(ModContentPack content) : base(content)
     {
-        instance = this;
+        Instance = this;
         currentVersion =
             VersionFromManifest.GetVersionFromModMetaData(content.ModMetaData);
     }
@@ -37,14 +37,10 @@ internal class NoVanillaWeaponsMod : Mod
     {
         get
         {
-            if (settings == null)
-            {
-                settings = GetSettings<NoVanillaWeaponsSettings>();
-            }
+            settings ??= GetSettings<NoVanillaWeaponsSettings>();
 
             return settings;
         }
-        set => settings = value;
     }
 
     /// <summary>
@@ -63,29 +59,29 @@ internal class NoVanillaWeaponsMod : Mod
     /// <param name="rect"></param>
     public override void DoSettingsWindowContents(Rect rect)
     {
-        var listing_Standard = new Listing_Standard();
-        listing_Standard.Begin(rect);
-        listing_Standard.Gap();
-        listing_Standard.Label("NVW.Restart".Translate());
-        listing_Standard.CheckboxLabeled("NVW.Melee".Translate(), ref Settings.Melee, "NVW.Melee.Tip".Translate());
-        listing_Standard.CheckboxLabeled("NVW.Ranged".Translate(), ref Settings.Ranged,
+        var listingStandard = new Listing_Standard();
+        listingStandard.Begin(rect);
+        listingStandard.Gap();
+        listingStandard.Label("NVW.Restart".Translate());
+        listingStandard.CheckboxLabeled("NVW.Melee".Translate(), ref Settings.Melee, "NVW.Melee.Tip".Translate());
+        listingStandard.CheckboxLabeled("NVW.Ranged".Translate(), ref Settings.Ranged,
             "NVW.Ranged.Tip".Translate());
-        listing_Standard.CheckboxLabeled("NVW.Grenades".Translate(), ref Settings.Grenades,
+        listingStandard.CheckboxLabeled("NVW.Grenades".Translate(), ref Settings.Grenades,
             "NVW.Grenades.Tip".Translate());
-        listing_Standard.Gap();
+        listingStandard.Gap();
         if (!Settings.Ranged && !Settings.Melee && !Settings.Grenades)
         {
-            listing_Standard.Label("NVW.Why".Translate());
+            listingStandard.Label("NVW.Why".Translate());
         }
 
         if (currentVersion != null)
         {
-            listing_Standard.Gap();
+            listingStandard.Gap();
             GUI.contentColor = Color.gray;
-            listing_Standard.Label("NVW.ModVersion".Translate(currentVersion));
+            listingStandard.Label("NVW.ModVersion".Translate(currentVersion));
             GUI.contentColor = Color.white;
         }
 
-        listing_Standard.End();
+        listingStandard.End();
     }
 }

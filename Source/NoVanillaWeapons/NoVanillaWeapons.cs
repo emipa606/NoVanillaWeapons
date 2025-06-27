@@ -12,9 +12,9 @@ internal static class NoVanillaWeapons
     {
         var vanillaWeapons = DefDatabase<ThingDef>.AllDefsListForReading
             .Where(weapon => weapon is { IsWeapon: true, modContentPack.IsOfficialMod: true } &&
-                             (NoVanillaWeaponsMod.instance.Settings.Melee || weapon.IsMeleeWeapon != true) &&
-                             (NoVanillaWeaponsMod.instance.Settings.Ranged || weapon.IsRangedWeapon != true) &&
-                             (NoVanillaWeaponsMod.instance.Settings.Grenades ||
+                             (NoVanillaWeaponsMod.Instance.Settings.Melee || !weapon.IsMeleeWeapon) &&
+                             (NoVanillaWeaponsMod.Instance.Settings.Ranged || !weapon.IsRangedWeapon) &&
+                             (NoVanillaWeaponsMod.Instance.Settings.Grenades ||
                               weapon.weaponTags?.Any(tag => tag.ToLower().Contains("grenade")) != true) &&
                              !weapon.IsStuff && weapon.weaponTags?.Contains("TurretGun") == false &&
                              !weapon.destroyOnDrop).ToList();
